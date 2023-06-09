@@ -58,7 +58,7 @@ const myIdentity_1 = {
     weight:     80,
     townn:      'Paris',
     // un objet dans un objet
-    town:       {name: 'Paris', Population: '20000'}
+    town:       {name: 'Paris', Population: '20000', superficy: 50}
 }
 
 const myIdentity_2 = {
@@ -69,7 +69,7 @@ const myIdentity_2 = {
     weight:     80,
     townn:      'Japon',
     // un objet dans un objet
-    town:       {name: 'Japon', Population: '30000'}
+    town:       {name: 'Japon', Population: '30000', superficy:30}
 }
 
 const myIdentity_3 = {
@@ -79,7 +79,7 @@ const myIdentity_3 = {
     weight:     80,
     age:        20,
     townn:      'Japon',
-    town:       {name: 'Japon', Population: '30000'}
+    town:       {name: 'Japon', Population: '30000', superficy:30}
 }
 
 //comparaison object
@@ -168,6 +168,22 @@ function calculIMC(pers){
 }
 
 objectphrase = `c'est ${bigIMC.firstName} ${bigIMC.lastName} qui a le plus grand imc, il est de ${bigIMC.imc}`
+//
+
+//supercify : Nombre d’habitants ÷ superficie (en km²) = nombre d’hab./km²
+function calculDensity(identityObject){
+
+    identityObject.town.peopledensity = identityObject.town.Population / identityObject.town.superficy
+}
+
+calculDensity(myIdentity_1);
+calculDensity(myIdentity_2);
+objectphrase = `La ville de ${myIdentity_1.town.name} a une densité de ${myIdentity_1.town.peopledensity} pers/Km² et celle de ${myIdentity_2.town.name} est de ${myIdentity_2.town.peopledensity}.`;
+if(myIdentity_1.town.peopledensity > myIdentity_2.town.peopledensity){
+    objectphrase += ` c'est donc la ville de ${myIdentity_1.firstName} ${myIdentity_2.lastName} qui habite dans la ville avec la plus grande densité.`
+} else{
+    objectphrase += ` c'est donc la ville de ${myIdentity_2.firstName} ${myIdentity_2.lastName} qui habite dans la ville avec la plus grande densité.`
+}
 
 
 /*display*/
