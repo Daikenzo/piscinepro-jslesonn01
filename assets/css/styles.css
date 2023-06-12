@@ -15,3 +15,8 @@
     /**background-color: rgb(237, 192, 56);*/
     background: linear-gradient(to right, #b2cde0, #6497b1);
 }
+
+.resultFct{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+}
