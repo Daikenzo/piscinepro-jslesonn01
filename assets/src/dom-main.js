@@ -17,7 +17,7 @@ mainBtn.addEventListener("click", onClick);
 //addEventListener: fonction pour récupérer l'écoute des event de la page
 //classname.addEventListener("type", fct())
 
-function onClick(event){
+function onClick(){
     //console.log("J'ai cliqué sur le bouton");
     //modifie l'opa cité bouton/element
     //event.target.style.opacity = 0.5;
