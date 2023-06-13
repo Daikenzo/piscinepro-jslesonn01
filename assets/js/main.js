@@ -17,12 +17,188 @@ push : rajoute élément en dernier dans un tableau (ex: words.push(`bueono`) )
 pop: retire le dernier zéléments du tableau
 shift: retire le premier éléments
 unshift: ajoute élément au début
+ex:
+words.push();
+words.unshift();
+
+// Tableau d'objet
 
 */
 
 
 // Main Program
 function main(){
+// Objet Lesson and Exo : Object (Pizza)
+    // pizza var
+    const pizzas = [
+        {
+            name: 'Margherita',
+            price: 11.50,
+            ingredients: ['mozzarella', 'tomate', 'basilic ', "huile d'olive"],
+            baseTomate: true
+        },
+        {
+            name: 'Regina',
+            price: 12,
+            ingredients: ['mozzarella', 'tomate', 'origan', 'jambon', 'champignons'],
+            baseTomate: true
+        },
+        {
+            name: '4 saisons',
+            price: 15,
+            ingredients: ['artichaut', 'courgette', 'poivron', 'mozzarella', 'oignon rouge'],
+            baseTomate: true
+        },
+        {
+            name: 'Napolitaine',
+            price: 14,
+            ingredients: ['tomate', 'mozzarella', 'anchois', 'olives noires', 'origan'],
+            baseTomate: true
+        },
+        {
+            name: '4 fromages',
+            price: 16,
+            ingredients: ['tomate', 'mozzarella', 'emmental', 'comté', 'roquefort'],
+            baseTomate: true
+        },
+        {
+            name: 'Montagnarde',
+            price: 19,
+            ingredients: ['mozzarella', 'reblochon', 'gruyère', 'oignon', 'champignon'],
+            baseTomate: false
+        },
+        {
+            name: 'Chèvre-miel',
+            price: 18,
+            ingredients: ['mozzarella', 'chèvre', 'miel'],
+            baseTomate: false
+        },
+        {
+            name: 'Hawaïenne',
+            price: 17,
+            ingredients: ['mozzarella', 'tomate', 'jambon', 'ananas'],
+            baseTomate: true
+        }
+    ]
+    // End pizza  
+
+
+
+
+    // Exo Consign
+    /*
+    1.ecrire function avec  param 1 tab, => fct return all .name elementstab in var names[]
+    2. write fct with param pizza tab & return prix moyen pizzas
+    3. write function With param pizza name => return ingredients from pizza.this
+    4. write fct , param tab  = pizzaq & return ingredients list without duplicate elements
+    5. fct with param : ingredient param et in tableau de pizzas, return tab string with pizza name whith this ingredient
+    */
+// Exo 1
+// call function object
+console.log("Nom des Pizzas:", getPizzaNameElements(pizzas));
+
+function getPizzaNameElements(pizzasList){
+    let pizzaNames = [];
+    for(let i = 0; i < pizzasList.length; i++){
+        pizzaNames.push(pizzasList[i].name)
+    }
+    return pizzaNames;
+}
+// Exo 2
+console.log("Prix Moyen", pizzaPrixMoyen(pizzas));
+
+function pizzaPrixMoyen(pizzasList){
+    let prixMoyen = 0;
+    //
+    for(let i = 0; i < pizzasList.length; i++){
+        prixMoyen += pizzasList[i].price;
+    }
+    return (prixMoyen / pizzasList.length).toFixed(2)
+}
+// exo 3 : write function With param pizza name from pizza tab=> return ingredients from pizza.this
+console.log("ingredients", getIngredientByPizzaName('Montagnarde',pizzas));
+
+const array1 = [5, 12, 8, 130, 44];
+
+const found = array1.find(element => element > 10);
+
+console.log(found);
+
+function getIngredientByPizzaName(name, arr){ // arr = array = tableau
+    let ingredients = [];
+
+    // what is the Pizza Id
+    let pizzaList = arr.name;
+
+
+    let pizzaID = pizzas.indexOf(name);
+    return pizzaList;
+
+    // 
+    for(let i = 0; i < arr.length; i++){
+        ingredients.push(arr[i].ingredients[i])
+    }
+    
+
+    return  ingredients;
+}
+
+// Exo 4 :
+
+console.log("pizzas List Ingredient", pizzaListAllIngredient(pizzas));
+// Array.includes() :  comparaison de valeur dabs un objet
+
+function pizzaListAllIngredient(pizzaList){ //GetAllIngredients
+    let pizzasIngredients = [];
+
+
+    for(let i = 0; i < pizzaList.length; i++){
+        const currentPizza = pizzaList[i];
+        for(let j = 0; j < currentPizza.ingredients.length; j++){
+            if(!pizzasIngredients.includes(currentPizza.ingredients[j])){
+                pizzasIngredients.push(currentPizza.ingredients[j]);
+            }
+        }
+    }
+
+    return pizzasIngredients;
+}
+
+// Exo 5
+const exo5result = getPizzaByIngredientName(pizzas, 'tomate');
+console.log(`Liste des pizzas contenant de la tomate`, exo5result);
+
+function getPizzaByIngredientName(arr, ingredientName){
+    let pizzaNames = []
+
+    for (let i = 0; i < arr.length; i++){
+        const currentPizza = arr[i]
+        if(currentPizza.ingredients.includes(ingredientName)){
+            pizzaNames.push(currentPizza.name)
+        }
+    }
+    return pizzaNames;
+}
+
+
+//Run Exo
+/*
+// afficher le name de la pizza
+console.log(pizzas[1].name);
+// afficher premier ingredient
+console.log(pizzas[1].ingredients[1]);*/
+
+
+    // Display 
+/*logMessage(`Le résultat du process de ${displayConsigne} est égale à:`);
+logMessage(`${_result}`);*/
+
+// end program
+}
+
+//Old etape conservée
+/*
+// tableau
     // Main Variable    
 const myNumbers = [4, 6, 3, 2];
     // Exo Consign
@@ -37,10 +213,7 @@ logMessage(`Le résultat du process de ${displayConsigne} est égale à:`);
 logMessage(`${_result}`)
 
 // end program
-}
 
-//Old etape conservée
-/*
 let Number1 = 23;
 let Number2 = 20;
 let Number3 = 60;
