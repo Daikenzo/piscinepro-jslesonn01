@@ -1,22 +1,37 @@
-*, ::before,    
-::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+
+/*création variable en css*/
+:root{ 
+  --dark-blue: #222831;
+  --soft-blue: #2d4059;
+  --red:#ff5722;
+  --grey: #eeeeee;
 }
 
-.main-container{
-    width:100vw;
-    height:100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: monospace;
-    /**background-color: rgb(237, 192, 56);*/
-    background: linear-gradient(to right, #b2cde0, #6497b1);
+/*DOM IRC CSS*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.resultFct{
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 800;
+body {
+  background-color: #2d4059;
+}
+
+.main-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-btn {
+  cursor: pointer;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px 20px;
+  background-color: var(--grey);
 }
