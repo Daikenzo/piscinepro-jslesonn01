@@ -5,16 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main class="main">
-        <div class="main-container">
-            <div class="btn main-btn">
-            click me
+    <main class="main-container">
+        <div class="container box"><!---->
+            <h1>Calcul <strong>D'IMC</strong></h1>
+            <div class="input-container">
+                <div class="input-group" name ="Taille" id="size">
+                    <label for="man-size">Votre Taille en centimètre</label>
+                    <input type="number" data-InputIMC="Height" id="Height"
+                    placeholder="Votre poid en Kg">
+                </div>
+                <div class="input-group" name="Poids" id="weight">
+                    <label for="man-weight">Votre poid en Kg</label>
+                    <input type="number" data-InputIMC="Weight" id="Weight"
+                    placeholder="Votre poid en Kg">
+                </div>
+
             </div>
+            <div class="container">
+                <div class="btn btn-form btn-imc">
+                    Calcul IMC
+                </div>
+            </div>
+            <div class="info container" id="bmi-container">
+                <div class="bmi-value">
+                    0
+                </div>
+                <div class="description" id="bmi-description">
+                    En attente de résultat...
+                </div>
+            </div>
+
         </div>
+
+
+
     </main>
 
-    <script src="assets/src/dom-main.js"></script>
+    <script src="assets/src/main.js"></script> <!-- Irc -->
 </body>
 </html>
