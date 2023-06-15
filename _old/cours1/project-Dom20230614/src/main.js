@@ -34,7 +34,13 @@ function onInteractInput2(){ // Maj div
 }
 
 // exo 3
-
+/*
+let dateControl = document.querySelector('input[type="date"]');
+dateControl.value = '2017-06-01';
+console.log(dateControl.value); // affiche "2017-06-01"
+console.log(dateControl.valueAsNumber); // affiche 1496275200000, un timestamp JavaScript (exprimé en ms)
+*/
+// const div3 = document.querySelector('#')
 
 
 //exo 4 form
@@ -47,8 +53,7 @@ form4.addEventListener('submit', onForm4Submit); // button
 function onForm4Submit(event){ // Maj div // par defaut, submit rafraichit la page
     event.preventDefault(); // pour éviter de rafraichir la page via le summit
     if (!input4.value){
-        
-        input4.textContent = OriginText;
+        div4.textContent = OriginText;
     } else{
 
        div4.textContent = input4.value
@@ -105,8 +110,28 @@ for(let i = 0; i < btns8.length; i++){
 
 function exo8Fct(event){
     
-    div8.style.backgroundColor = event.target.getAttribute("Data-color");
+    div8.style.backgroundColor = event.target.getAttribute("data-color");
 }
 
 // Exo 9
 
+const div9 = document.querySelector('.text-to-display-9');
+const checkboxes = document.querySelectorAll('.checkbox');
+
+for (let index = 0; index < checkboxes.length; index++) {
+    const checkbox = checkboxes[index];
+    checkbox.addEventListener('change', onCheckboxChange);    // checkboxes[i].addEventListener();
+}
+function onCheckboxChange(){
+    let concactStr = ''
+    if(checkboxes[0].checked){
+        //console.log(e.currentTarget)
+        concactStr += checkboxes[0].value
+    }
+    if(checkboxes[1].checked){
+        //console.log(e.currentTarget)
+        if(concactStr) concactStr += ` - `
+        concactStr += checkboxes[1].value
+    }
+    div9.textContent = concactStr
+}
