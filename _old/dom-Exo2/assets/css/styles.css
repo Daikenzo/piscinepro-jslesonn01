@@ -1,0 +1,111 @@
+
+/*création variable en css*/
+:root{ 
+  --dark-blue: #222831;
+  --soft-blue: #2d4059;
+  --red:#ff5722;
+  --red2:#fe6f27;
+  --grey: #eeeeee;
+
+  --primary-bg-color: var(--grey);
+
+  --border-shadow1: 0  4px 5px rgba(0,0,0,0.3);
+}
+
+/*DOM IRC CSS*/
+
+/*Init css*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/*Utilities*/
+body {
+  background-color: #2d4059;
+  font-family: Lato;
+}
+h1{
+  font-weight: 500;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/*main*/
+.main-container{
+  margin-top: 15vh;
+}
+.container{
+  background-color: var(--primary-bg-color);
+  max-width: 850px;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px auto;
+  position: relative;
+  display: grid;
+}
+.box{
+  box-shadow: var(--border-shadow1);
+}
+
+.input-container{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.input-group label{
+  display: block;
+  margin: 5%;
+  margin-bottom: 10px;
+}
+.input-group input{
+  min-width: 250px;
+  font-size: 18px;
+  padding: 5px;
+  border: none;
+  box-shadow: var(--border-shadow1);
+}
+
+.btn{
+  font-size: 24px;
+  margin:80 auto;
+  
+  padding: 5px;
+  width:200px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn:hover{
+  font-weight: 600;
+}
+.btn-form{
+  background-color: var(--red);
+}
+.btn-form:hover{
+  background-color: var(--red2);
+}
+.CalculUMC{
+  width: fit-content;
+  align-self: center;
+  align-items: center;
+  text-align: center;
+}
+.bmi-value{
+  text-align: center;
+  font-size:40px;
+  font-weight:900px;
+  margin-bottom: 20px;
+}
+.description{
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+  align-items: center;
+  justify-self: center;
+}

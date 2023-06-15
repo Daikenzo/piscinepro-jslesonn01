@@ -40,9 +40,44 @@ dateControl.value = '2017-06-01';
 console.log(dateControl.value); // affiche "2017-06-01"
 console.log(dateControl.valueAsNumber); // affiche 1496275200000, un timestamp JavaScript (exprimé en ms)
 */
-// const div3 = document.querySelector('#')
+const div3 = document.querySelector('.text-to-display-4');
+const dates3 = document.querySelectorAll('.input-4');
 
 
+for (let i = 0; i < dates3.length; i++) {
+    //const input = dates3[i];
+    dates3[i].addEventListener('input', DateInput3Change);
+}
+
+
+function DateInput3Change(){
+    let Result = getDaysDates(dates3[1].value,dates3[0].value);
+
+    if(Result < 2){
+        div3.textContent = `Le séjour durera ${Result} jour`
+    }else{
+        div3.textContent = `Le séjour durera ${Result} jours`
+    }
+    
+/*
+    let dateResult = `2017-06-01`;
+    console.log(dateResult);
+    dateResult.value = */
+    div3.textContent = dateResult.value;
+}
+
+function getDaysDates(date2, date1) {
+    let date1Ob = new Date(date1);
+    let date2Ob = new Date(date2);
+    let diffTime = date2Ob -date1Ob;
+    //console.log(diffTime )/ (1000 * 60 * 60 * 24)
+    let diffTimeDays = diffTime / (1000 * 60 * 60 * 24);
+    if(diffTimeDays < 0){
+        return 0
+    }
+
+    return diffTimeDays;
+}
 //exo 4 form
 const div4 = document.querySelector('.text-to-display-2'); // Result
 const input4 = document.querySelector('.input-2');
@@ -133,5 +168,5 @@ function onCheckboxChange(){
         if(concactStr) concactStr += ` - `
         concactStr += checkboxes[1].value
     }
-    div9.textContent = concactStr
+    div9.textContent = concactStr;
 }
