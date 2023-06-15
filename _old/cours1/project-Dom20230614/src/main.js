@@ -77,8 +77,7 @@ for (let i; i < div6.length; i++){
 }
 
 function onSelectOption(){
-    if (!(input4.value) === "Select One …"{
-        
+    if (!(input4.value) === "Select One …"){
         input4.textContent = OriginText;
     } else{
 
