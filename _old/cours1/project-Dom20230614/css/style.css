@@ -104,14 +104,16 @@ input, select {
     }
 }
 
-@media (max-width: 650px) { 
+@media (max-width: 650px) {
 
     .titleDiv{
         
-        margin-bottom: 6vh;
+        margin-bottom: 8vh;
+        
+        padding: auto;
     }
     h1{
-        font-size: 5vw;
+        font-size: 2rem;
     }
     .grid{
         grid-template-columns: repeat(1, 1fr);
@@ -123,5 +125,14 @@ input, select {
         align-content: center;
         
     }
-    
-}   
+}
+
+@media (max-width: 430px){
+    .titleDiv{
+        
+        margin-bottom: 6vh;
+    }
+    h1{
+        font-size: 7vw;
+    }
+}

@@ -68,24 +68,30 @@ function onSlider5Change(){ // ou (e) pour event
 }
 
 // Exo 6
-const div6 = document.querySelector('.select-6'); // Result script
-const OptionValueTab = document.querySelectorAll('option');
-const defaultSelectText = "..."
+const SelectValue = document.querySelector('.select-6'); // Result script .text-to-display-6
+const div6 = document.querySelector('.text-to-display-6');
 
-for (let i; i < div6.length; i++){
-    OptionValueTab[i].addEventListener('click', onSelectOption);
-}
 
-function onSelectOption(){
-    if (!(input4.value) === "Select One …"){
-        input4.textContent = OriginText;
+SelectValue.addEventListener('change', onSelectOption);
+
+function onSelectOption(event){
+    if (!SelectValue.value){
+        div6.textContent = "...";
     } else{
 
-       div4.textContent = input4.value
+       div6.textContent = event.currentTarget.value;
     }
 }
 // Exo 7
+const div7 = document.querySelector('.div-to-color-7');
+const inputSetColor = document.querySelector('.input-7');
 
+inputSetColor.addEventListener('input',setColorCircle7)
+
+
+function setColorCircle7(event){
+    div7.style.backgroundColor = event.target.value;
+}
 
 // Exo 8
 
