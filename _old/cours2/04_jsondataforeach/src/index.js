@@ -94,6 +94,41 @@ ExoResult = getGameNameByRate(7, games);
 displayResult(3, ExoResult);
 // 4. Ecrire une fonction qui prend en parametre une appareil/ console et un tableau (games), et qui retourne un nouveau tableau de tous les jeux disponibles sur cette console
 
-ExoResult;
+const   getGameListbyDevices = (checkDevice, arr) => {
+    let gameLists = []
+
+    // version normal
+    /*
+    arr.forEach( (el) => {
+        // 
+        if(el.devices.includes(checkDevice)){
+            gameLists.push(el.title)
+            // includes:  est ce que la valeur de checkdevice est contenu dans le texte ?
+        }
+    })
+    
+    //Fin version  normal*/
+    // Version Avancée
+    //*
+
+    // correct
+    //1
+    arr.forEach((game) => {
+        // 
+    for (let i = 0; i < game.devices.length; i++) {
+        const element = game.devices[i];
+        if(element.includes(checkDevice)){
+            gameLists.push(game.title);
+            break;
+            }
+        }
+    
+    })
+    
+    //Fin version Avancée*/
+    return  gameLists; 
+}
+
+ExoResult = getGameListbyDevices("Nintendo Switch", games);
 displayResult(4, ExoResult);
 }
