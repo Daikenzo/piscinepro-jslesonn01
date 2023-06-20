@@ -57,6 +57,7 @@ async function fetchData() {
         displayData(data);
     }
     catch (error) {
+        resetVal()
         btnChange('reset')
         errorMsg.textContent = `${error}`
         // permet d'executer un code avec delai
@@ -104,14 +105,22 @@ function    displayData(data){
         visitors[index].style.transform = `scaleX(${current / max})`
     })
 }
+function resetVal(){
+    placeNames.forEach((el, index)=>{
+        placeNames[index].textContent = `nom de la piscine`
+        placeInfos[index].textContent = `... / ...`
+
+        visitors[index].style.transform = `scaleX(${1 / 100})`
+    })
+}
 
 // EventListener Classic Event
 function    eventListenerInit(){
-
 }
 
 // Init
 function    init(){
-    eventListenerInit();
+    eventListenerInit()
+    resetVal()
     
 }
