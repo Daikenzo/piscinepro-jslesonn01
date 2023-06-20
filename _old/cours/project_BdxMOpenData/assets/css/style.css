@@ -9,6 +9,7 @@
     --grey: #6e8cae;
     --red: #fc7472;
     --dark-red: #c64c4a;
+    --fetch-red: #8c1f1d;
     /*Border*/
     --border-radius : 20px;
     /*Width*/
@@ -29,7 +30,7 @@
     min-height: 100vh;
     font-family: lato, Helvetica, sans-serif;
     background: linear-gradient(to right, var(--blue5), var(--blue4));
-    padding: clamp(20px, 5vw, 50px) 20px 10px;
+    padding: clamp(20px, 5vw, 50px) 20px 5vw;
   }
   h1 {
     text-align: center;
@@ -67,7 +68,7 @@
   .places-container {
     min-width: var(--min-width);
     background: linear-gradient(to bottom, var(--blue3), var(--blue2));
-    padding: 30px;
+    padding: 30px 10%;
     border-radius: 22px;
     display: flex;
     flex-direction: column;
@@ -90,7 +91,7 @@
   
   .searching {
     pointer-events: none;
-    background-color: var(--dark-red);
+    background-color: var(--fetch-red);
   }
   
   .searching:hover {
@@ -107,6 +108,9 @@
     margin-bottom: 30px;
     color: red;
   }
+  .errorBtn {
+    background-color: red;
+  }
   
   .place {
     width: 100%;
@@ -114,13 +118,13 @@
   }
   
   .place-infos {
-    margin-bottom: 10px;
+    margin-bottom: 10%;
     font-weight: 900;
   }
   
   .diagram-container {
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 2rem;
   }
   
   .capacity {
@@ -146,4 +150,14 @@
     max-width: 100vh;
     max-height: max-content;   
     min-height: 5vh;
+  }
+
+  @media(max-width:380px){
+    .main-interface {
+     width:min-content;
+    }
+    .places-container {
+      max-width: 10vw;
+      padding: 30px 10vw;
+    }
   }

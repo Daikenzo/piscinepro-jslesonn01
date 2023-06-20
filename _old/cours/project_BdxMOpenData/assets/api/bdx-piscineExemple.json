@@ -1,0 +1,92 @@
+[
+    {
+        "datasetid": "bor_frequentation_piscine_tr",
+        "recordid": "71dc618e45af15a6e1a455c05ce9aba48bcc2d45",
+        "fields": {
+            "fmizonlib": "Est",
+            "fmizonnum": 8,
+            "sortie": 0,
+            "fmizonmax": 200,
+            "entree": 0,
+            "etablissement_etalib": "Piscine Judaique - Jean Boiteux",
+            "fmicourante": 0,
+            "datemiseajour": "2023-06-20T10:22:00+00:00"
+        },
+        "record_timestamp": "2023-06-20T10:25:14.28Z"
+    },
+    {
+        "datasetid": "bor_frequentation_piscine_tr",
+        "recordid": "6335a1cd4d2db167149936b9091e68e781743f23",
+        "fields": {
+            "fmizonlib": "Zone Bassins",
+            "fmizonnum": 12,
+            "sortie": 98,
+            "fmizonmax": 400,
+            "entree": 122,
+            "etablissement_etalib": "Piscine Galin",
+            "fmicourante": 24,
+            "datemiseajour": "2023-06-20T10:25:00+00:00"
+        },
+        "record_timestamp": "2023-06-20T10:25:14.28Z"
+    },
+    {
+        "datasetid": "bor_frequentation_piscine_tr",
+        "recordid": "0e29c6dd0723b1370183d1659f4106c563167c1e",
+        "fields": {
+            "fmizonlib": "Zone Gradins",
+            "fmizonnum": 21,
+            "sortie": 0,
+            "fmizonmax": 85,
+            "entree": 0,
+            "etablissement_etalib": "Piscine Galin",
+            "fmicourante": 0,
+            "datemiseajour": "2023-06-20T10:25:00+00:00"
+        },
+        "record_timestamp": "2023-06-20T10:25:14.28Z"
+    },
+    {
+        "datasetid": "bor_frequentation_piscine_tr",
+        "recordid": "f5f67278238d118bfa194f2d88fa745d0182b6d9",
+        "fields": {
+            "fmizonlib": "Zone Générale",
+            "fmizonnum": 9,
+            "sortie": 0,
+            "fmizonmax": 342,
+            "entree": 1,
+            "etablissement_etalib": "Piscine Tissot",
+            "fmicourante": 1,
+            "datemiseajour": "2023-06-20T10:20:00+00:00"
+        },
+        "record_timestamp": "2023-06-20T10:25:14.28Z"
+    },
+    {
+        "datasetid": "bor_frequentation_piscine_tr",
+        "recordid": "b5b313f78cf0c5fda1b3f69ed30111e6b8960ca8",
+        "fields": {
+            "fmizonlib": "Ouest",
+            "fmizonnum": 1,
+            "sortie": 126,
+            "fmizonmax": 600,
+            "entree": 223,
+            "etablissement_etalib": "Piscine Judaique - Jean Boiteux",
+            "fmicourante": 97,
+            "datemiseajour": "2023-06-20T10:22:00+00:00"
+        },
+        "record_timestamp": "2023-06-20T10:25:14.28Z"
+    },
+    {
+        "datasetid": "bor_frequentation_piscine_tr",
+        "recordid": "4f91fb100de2585d72d7260ac89a22ad2a4fd960",
+        "fields": {
+            "fmizonlib": "Zone Générale",
+            "fmizonnum": 14,
+            "sortie": 0,
+            "fmizonmax": 400,
+            "entree": 0,
+            "etablissement_etalib": "Piscine Grand Parc",
+            "fmicourante": 0,
+            "datemiseajour": "2023-01-02T15:45:00+00:00"
+        },
+        "record_timestamp": "2023-06-20T10:25:14.28Z"
+    }
+]
