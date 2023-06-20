@@ -1,9 +1,17 @@
 //Constant & Var
 // Btn
-const refreshBtn = 0
+const   btn = document.querySelector('.places-container button')
+//Txt & Message
+const   errorMsg = document.querySelector('.errorMsg')
 
 //Dataset
+const   dataset = 'bor_frequentation_piscine_tr'
 
+// Init EventListener
+init();
+
+// RunProg
+console.log(errorMsg)
 
 //Function
 async function fetchData() {
@@ -21,13 +29,17 @@ async function fetchData() {
     }
     catch (error) {
         // btnChange()
-        // errorMsg.textContent = `${error}`
+        errorMsg.textContent = `${error}`
+        console.log("e")
+        
     }
 }
-
+// EventListener Event
+function    eventListenerInit(){
+    btn.addEventListener('click',fetchData)
+}
 
 // Init
-function init(à{
-
-
-})
+function    init(){
+    eventListenerInit();
+}
