@@ -1,8 +1,14 @@
 //Const & var
-const fetchUrl = `https://fakestoreapi.com/products/1`
+const fetchUrl = `https://fakestoreapi.com/products`
+
+const containerRow = document.querySelector('.row')
+const checks = document.querySelectorAll('.btn-check');
+const select = document.querySelector('.form-select');
+let data;
 
 
-
+init()
+fetchData()
 // function
 // asyn
 async function fetchData() {
@@ -11,21 +17,36 @@ async function fetchData() {
 
         if (!response.ok) {
             throw new Error(`Erreur: ${response.status}`)
+            // throw : 
         }
-
         const data = await response.json()
-        console.log(data)
+        
         displayData(data);
     }
     catch (error) {
-        // permet d'executer un code avec delai
-        //setTimeout(btnChange, 2000,'reset')
-        
+        console.log(error);
     }
 }
 
 
-// Update & Display
-function    displayData(data){
 
+
+// Update & Display Data
+function    displayData(data, category = []){
+    const data_view = data
+    console.log(data_view)
+}
+
+// ordered
+function orderList(data){
+    if (select.value === 'Trier par') return
+    
+}
+
+function init(){
+    // init Listener
+    checks.forEach((check) => {
+        check.addEventListener('change', displayData)
+    })
+    select.addEventListener('change', displayData)
 }

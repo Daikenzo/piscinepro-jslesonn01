@@ -18,8 +18,9 @@ async function fetchData() {
         if (!response.ok) {
             throw new Error(`Erreur: ${response.status}`) // throw
         }
-
+        
         data = await response.json()
+        
         displayData(data);
     }
     catch (error) {

@@ -118,6 +118,7 @@ displayResult(`1`, ExoResult);
 const getMoviesFromYear = ((year, arr)=>{
     const yearFilter = arr.filter((el)=>{
         if (el.year == year){ return true}else{return false}
+         // alias return  el.year === year
     })
     const moviesList = yearFilter.map((currentElement)=>{
         return currentElement.title
@@ -129,17 +130,18 @@ displayResult(`2`, ExoResult);
 // 3. Ecrire une fonction qui prend en parametre un realisateur et un tableau (movies), et qui retourne un nouveau tableau de tous les titres de films de ce realisateur
 const   getMovieTitleByAuthor = ((director, arr)=>{
     const   authorFilter =  arr.filter((el)=>{
-        if(el.director == director){return true}else{return false}
+        return el.director === director
     })
     const   moviesList  =   authorFilter.map((currentEl)=>{
         return  currentEl.title
     })
     return moviesList
 })
-ExoResult =getMovieTitleByAuthor('Robert Zemeckis', movies)
+ExoResult =getMovieTitleByAuthor('Christopher Nolan', movies)
 displayResult(`3`, ExoResult);
 
 }
+
 // display log
 function displayResult(ExoNumber, element){
     if(element !== resultExample){
