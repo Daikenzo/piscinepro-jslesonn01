@@ -15,7 +15,7 @@ displayResult(`0a`, movies[0]);
 displayResult(`0b`, movies[3].year);
 // c. Logger le titre du dernier element du tableau movies
 displayResult(`0c`, movies[movies.length-1].title);
-// d. Logger le titre du film qui a la meilleure note
+// d. Logger le titre du film qui a la meilleure note/*
 const bestMoviesSearch = (arr)  =>{
     let bestMovie = arr[0]
 
@@ -30,16 +30,25 @@ const bestMoviesSearch = (arr)  =>{
 ExoResult = bestMoviesSearch(movies);
 displayResult(`0d`, ExoResult)
 // sort ver
-const bestFilmNoteWithSort = (rating, arr){
+const bestFilmNoteWithSort = (arr) =>{
+    let arr_compare = arr
+    const bestMovie = arr_compare[0]
+    // warning: sort modifie l'odre du tableau en interne
+    arr_compare.sort((a,b) =>{
+
+        return b.rate - a.rate;
+    })
+    return arr_compare[0]
 
 }
+ExoResult = bestFilmNoteWithSort(movies)
 displayResult(`0d`, ExoResult);
 // e. Logger le titre du film le plus ancien
 const titleOldFilm = (arr)  =>{
     let oldMovie = arr[0]
 
     arr.forEach((movie) => {
-        if( movie.year < bestMovie.year){
+        if( movie.year < oldMovie.year){
             oldMovie = movie
         }
     })
@@ -51,10 +60,10 @@ displayResult(`0e`, ExoResult);
 // f. Logger tous les titres de film qui ont au moins 3 acteurs
 const filmWith3Actor = (arr)  =>{
     let filmList = []
-
-    arr.forEach(() => {
-        if(arr.actors.length){
-            filmList.push(arr.title)
+// erorr
+    arr.forEach((el) => { // 
+        if(el.actors.length < 3){
+            filmList.push(el.title) // renvoie element courant
         }
     })
 
