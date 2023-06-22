@@ -107,5 +107,6 @@ function orderList(data) {
 }
 
 function onSelect(e) {
+    onListChange()
     console.log(e.currentTarget.value)
 }
