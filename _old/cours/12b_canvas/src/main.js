@@ -59,22 +59,27 @@ let radius = 30
 export default function main(st) {
     stage = st;
     createBackground();
-    createCircle();
+    createCircle(120,80,"red");
+    createCircle(120,80,"blue");
+    createCircle(120,80,"green");
     return stage;
 }
 
-function createCircle() {
+function createCircle(paramX, paramY, color) {
     let gr = new createjs.Graphics();
     let circle = new createjs.Shape(gr);
 
     circle.pace = 1;
     circle.canMove = false
-    circle.addEventListener('tick', onCircleTick)
+    //circle.addEventListener('tick', onCircleTick)
     // circle.addEventListener('click', onCircleClick)
-
-    gr.beginFill("green").drawCircle(0, 0, radius);
-    circle.x = 100;
-    circle.y = 100;
+    circle.addEventListener('pressmove', onCircleMove)
+    
+    gr.setStrokeStyle(2)
+    gr.beginStroke('black')
+    gr.beginFill(color).drawCircle(0, 0, radius);
+    circle.x = paramX;
+    circle.y = paramY;
     stage.addChild(circle);
 }
 
@@ -93,6 +98,12 @@ function onCircleTick(e) {
     }
 }
 
+
+function onCircleMove(e){
+    e.currentTarget.x = stage.mouseX
+    e.currentTarget.y = stage.mouseY
+}
+// createjs.Touch.enable(stage) // permet l'utilisation de l'écran tactile
 function createBackground() {
     let gr = new createjs.Graphics()
     let bg = new createjs.Shape(gr)
