@@ -5,7 +5,7 @@ const containerRow = document.querySelector('.row')
 const container = document.querySelector('.row')
 const checks = document.querySelectorAll('.btn-check');
 const select = document.querySelector('.form-select');
-let data;
+let data
 
 
 init()
@@ -20,7 +20,7 @@ async function fetchData() {
             throw new Error(`Erreur: ${response.status}`)
             // throw : 
         }
-        const data = await response.json()
+    data = await response.json()
         
         displayData(data);
     }
@@ -34,11 +34,16 @@ async function fetchData() {
 
 // Update & Display Data
 function    displayData(data, categories = []){
-    const data_view = data
-    console.log(data_view)
+    //const data_view = data
+    console.log(data)
 
-    orderList(data);
+    
     containerRow.textContent = ''
+    container.textContent = ''
+    // Next step declare listener checkboxes
+    // console à chaque click
+    orderList();
+
     data.forEach((product) => {
         if (categories.length !== 0) {
             if (!categories.includes(product.category)) return;
@@ -55,10 +60,10 @@ function    displayData(data, categories = []){
             <div class="d-flex flex-row mb-3"><img class="" src="${product.image}" width="70">
                 <div class="d-flex flex-column ml-2"><div class="custom-margin"><h5>${product.title}</h5><span class="text-black-50">${product.category}</span><div class="ratings mt-1">${rateStars}</div></div></div>
             </div>
-            <div>${product.description.slice(0, 120)}...</div>
+            <div>${product.description.slice(0, 80)}...</div>
             <div class="d-flex justify-content-between install mt-3"><h6>${product.price}$</h6><span class="text-primary">View&nbsp;<i class="fa fa-angle-right"></i></span></div>
         </div>
-`;
+`;// slice : permet de récupérer le nombfre de caractère voulu dans un tableau/texte
         
         containerRow.appendChild(listItem);
     })
@@ -87,11 +92,15 @@ function buildStars(rate) {
         // add rating value content
         ratingHTML += ` <span class='rate'>${product.rating.rate}</span>`
 */
+        // add rating value content
+        result += ` <span class='rate'>${rate}</span>`
     return result
 }
 
 // Update
 function onListChange(e) {
+    console.log(e)
+
     let categories = []
     checks.forEach((check) => {
         if (check.checked) {
@@ -103,18 +112,25 @@ function onListChange(e) {
 }
 
 // ordered
-function orderList(data) {
-    if (select.value === 'Trier par') return
+function orderList() {
+    
+    let selectName = ''
+    if (!(select[select.value])){
+        return selectName = 'Trier par'
+    } else selectName = select[select.value].textContent
+    console.log(select[select.value].textContent)
 
-    let asc = select.value.includes('asc')
-    let criteria = select.value.split(' ')[0]
+    if (selectName === 'Trier par') return
+
+    let asc = selectName.includes('dec') //asc // select.value.
+    let criteria = selectName.split(' ')[0]
 
     let result = 1
     if (!asc) {
         result = -1
     }
 
-    if (criteria === 'price') {
+    if (criteria === 'prix') {
         data.sort((a, b) => {
             if (a.price < b.price) {
                 return -result;
@@ -139,7 +155,7 @@ function orderList(data) {
 // btn order
 function onSelect(e) {
     console.log(e.currentTarget.value)
-    onListChange()
+    onListChange(e)
 }
 
 
